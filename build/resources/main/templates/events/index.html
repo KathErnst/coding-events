@@ -6,18 +6,20 @@
 
 <h1>All Events</h1>
 
-<nav th:replace="fragments :: navigation"></nav>
-
-<p th:unless="${events} and ${events.size()}">No events!</p>
+<nav th:replace="fragments :: header"></nav>
 
 <table class="table table-striped">
     <head>
         <tr>
+            <th>ID</th>
             <th>Name</th>
+            <th>Description</th>
         </tr>
     </head>
     <tr th:each="event : ${events}">
-        <td th:text="${event}"></td>
+        <td th:text="${event.id}"></td>
+        <td th:text="${event.name}"></td>
+        <td th:text="${event.description}"></td>
     </tr>
 </table>
 
