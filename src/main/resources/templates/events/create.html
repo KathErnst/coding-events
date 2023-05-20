@@ -13,16 +13,44 @@
         <p class="error" th:errors="${event.name}"></p>
     </div>
     <div class="form-group">
+        <label>Location
+            <input th:field="${event.location}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.location}"></p>
+    </div>
+    <div class="form-group">
         <label>Description
             <input th:field="${event.description}" class="form-control">
         </label>
         <p class="error" th:errors="${event.description}"></p>
+    </div>
+<!--    <div class="form-group">-->
+<!--        <label>Registration Required?-->
+<!--            <input type="checkbox" name="isRegistrationRequired" value=true class="form-control">-->
+<!--        </label>-->
+<!--        <p class="error" th:errors="${event.isRegistrationRequired}"></p>-->
+<!--    </div>-->
+    <div class="form-group">
+        <label>Number of Attendees
+            <input th:field="${event.numberOfAttendees}" class="form-control">
+        </label>
+        <p class="error" th:errors="${event.numberOfAttendees}"></p>
     </div>
     <div class="form-group">
         <label>Contact Email
             <input th:field="${event.contactEmail}" class="form-control">
         </label>
         <p class="error" th:errors="${event.contactEmail}"></p>
+    </div>
+    <div class="form-group">
+        <label>Type
+        <select th:field="${event.type}">
+            <option th:each="type : ${types}"
+                    th:value="${type}"
+                    th:text="${type.displayName}"
+            ></option>
+        </select>
+        </label>
     </div>
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-success">
